@@ -567,5 +567,26 @@
             });
         });
     </script>
+    <script>
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".smart-scroll");
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            navbar.classList.remove("scrolled-up");
+            navbar.classList.add("scrolled-down");
+        } else {
+            // Scrolling up
+            navbar.classList.remove("scrolled-down");
+            navbar.classList.add("scrolled-up");
+        }
+        lastScrollTop = scrollTop;
+    });
+    </script>
+
+    
 </body>
 </html>
