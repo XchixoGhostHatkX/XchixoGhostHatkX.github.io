@@ -71,7 +71,24 @@
             color: #f9f9f9;
             line-height: 1.6;
         }
+        .smart-scroll {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            z-index: 1030;
+            transition: transform 0.3s ease-in-out;
+        }
 
+        .scrolled-down {
+            transform: translateY(-100%);
+        }
+
+        .scrolled-up {
+            transform: translateY(0);
+        }
+
+        
         .card {
             background-color: #333;
             padding: 20px;
