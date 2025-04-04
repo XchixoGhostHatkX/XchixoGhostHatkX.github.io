@@ -917,26 +917,5 @@
 
         console.log("Portfolio loaded successfully!");
     </script>
-    <script>
-        function animateValue(id, start, end, duration) {
-            let range = end - start;
-            let current = start;
-            let increment = end > start? 1 : -1;
-            let obj = document.getElementById(id);
-            let timer = setInterval(() => {
-                current += increment;
-                obj.textContent = current;
-                if (current == end) {
-                    clearInterval(timer);
-                }
-            }, duration / range);
-        }
-
-        animateValue("happy-customers", 0, 150, 2000);
-        animateValue("projects", 0, 200, 2500);
-        animateValue("clients", 0, 100, 1500);
-        animateValue("thanks", 0, 500, 3000);
-    </script>
-
 </body>
 </html>
