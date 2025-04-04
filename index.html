@@ -191,7 +191,61 @@
             height: 3px;
             background: var(--primary);
         }
-
+        
+        #statsc { 
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .stats {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+        }
+        .stats-item {
+            display: inline-block;
+            width: 25%;
+        }
+        .stats-item h2 {
+            font-size: 30px;
+            margin: 10px 0;
+        }
+        .testimonials {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .testimonial {
+            margin-bottom: 20px;
+        }
+        .stats-item {
+            display: inline-block;
+            width: 25%;
+        }
+        .stats-item h2 {
+            font-size: 30px;
+            margin: 10px 0;
+        }
+        .testimonials {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .testimonial {
+            margin-bottom: 20px;
+        }
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #e8491d;
+            text-align: center;
+        }
         /* Cards */
         .card {
             background: rgba(255, 255, 255, 0.05);
@@ -491,6 +545,27 @@
     </section>
     <p align="center"><img src="https://git-profile-readme-banner.vercel.app/api/python?username=XchixoGhostHatkX&txt=Innovative%20And%20Creative%20Tech%20Expert" title="Banner" style="width: 100%; max-width: 600px; display: block; margin: auto;">
     </p>
+    <section class="stats">
+        <div class="card">
+            <div class="stats-item">
+                <h2 id="happy-customers">0</h2>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stats-item">
+                <h2 id="projects">0</h2>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stats-item">
+                <h2 id="clients">0</h2>
+                <p>Satisfied Clients</p>
+            </div>
+            <div class="stats-item">
+                <h2 id="thanks">0</h2>
+                <p>Thank You Notes</p>
+            </div>
+        </div>
+    </section>
+
     <main class="container">
         <!-- About Section -->
         <section id="about" class="card animated">
@@ -915,6 +990,26 @@
             correctLevel: QRCode.CorrectLevel.H
         });
         console.log("Portfolio loaded successfully!");
+    </script>
+    <script>
+        function animateValue(id, start, end, duration) {
+            let range = end - start;
+            let current = start;
+            let increment = end > start? 1 : -1;
+            let obj = document.getElementById(id);
+            let timer = setInterval(() => {
+                current += increment;
+                obj.textContent = current;
+                if (current == end) {
+                    clearInterval(timer);
+                }
+            }, duration / range);
+        }
+
+        animateValue("happy-customers", 0, 150, 2000);
+        animateValue("projects", 0, 200, 2500);
+        animateValue("clients", 0, 100, 1500);
+        animateValue("thanks", 0, 250, 3000);
     </script>
 </body>
 </html>
